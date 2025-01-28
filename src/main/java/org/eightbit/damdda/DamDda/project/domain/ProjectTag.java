@@ -17,8 +17,7 @@ public class ProjectTag {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "project_tag_id")
-    private Long id;
+    private Long projcetTagId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "project_id")

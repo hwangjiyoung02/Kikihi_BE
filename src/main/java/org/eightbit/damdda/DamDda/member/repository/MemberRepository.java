@@ -8,6 +8,9 @@ import java.util.Optional;
 
 @Repository
 public interface MemberRepository extends JpaRepository<Member,Long> {
+    //email을 받아 db테이블에서 회원을 조회하는 메서드
+
     Optional<Member> findByEmail(String email);
+
 
 }

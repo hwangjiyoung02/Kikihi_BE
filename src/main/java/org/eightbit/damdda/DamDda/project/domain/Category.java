@@ -16,8 +16,8 @@ import java.util.List;
 public class Category {
 
     @Id
-    @Column(name = "category_id")
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long categoryId;
 
     @Column(nullable = false, unique = true)  // 유니크 키 명시
     private String name;

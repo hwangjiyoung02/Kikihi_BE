@@ -4,7 +4,63 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6997ce97-a1ee-4edd-bce0-dc852a11376a" name="Changes" comment="" />
+    <list default="true" id="6997ce97-a1ee-4edd-bce0-dc852a11376a" name="Changes" comment="📰 feat: member, project 관련 엔티티 작성, db 연결">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/common/ApiResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/common/CustomErrorCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/common/CustomException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/common/ErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/common/TimeBaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/config/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/member/controller/MemberApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/member/domain/CustomMemberDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/member/service/CustomeMemberDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/member/service/MemberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/member/service/request/AddUserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/security/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/security/filter/LoginFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/security/util/JWTUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/external-credentials.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ebdd9ea3-76b2-45bd-b420-58f6b4c7dbda.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ebdd9ea3-76b2-45bd-b420-58f6b4c7dbda.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/member/domain/LoginType$LoginTypeBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/member/domain/LoginType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/member/domain/Member$MemberBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/member/domain/Member$MemberBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/member/domain/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/member/domain/Member.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/domain/Category$CategoryBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/domain/Category$CategoryBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/domain/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/domain/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/domain/Project$ProjectBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/domain/Project$ProjectBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/domain/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/domain/Project.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/domain/ProjectTag$ProjectTagBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/domain/ProjectTag$ProjectTagBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/domain/ProjectTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/domain/ProjectTag.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/domain/Tag$TagBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/domain/Tag$TagBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/domain/Tag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/domain/Tag.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/repository/ProjectRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/repository/ProjectRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/org/eightbit/damdda/DamDda/project/repository/ProjectRepositoryCustom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/data/before.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/org/eightbit/damdda/DamDda/member/domain/MemberRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/org/eightbit/damdda/DamDda/member/domain/MemberRepositoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/member/domain/LoginType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/member/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/member/domain/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/member/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/member/repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/project/domain/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/project/domain/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/project/domain/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/project/domain/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/project/domain/ProjectTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/project/domain/ProjectTag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/project/domain/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/project/domain/Tag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/project/repository/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/project/repository/ProjectRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/project/repository/ProjectRepositoryCustom.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/eightbit/damdda/DamDda/member/domain/MemberRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/eightbit/damdda/DamDda/member/domain/MemberRepositoryTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,18 +87,7 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="DamDda" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DamDda" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DamDda" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -55,65 +100,95 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="package-info" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;hwangjiyoung02&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/hwangjiyoung02/Damdda_BE_refacotring.git&quot;,
+    &quot;accountId&quot;: &quot;b94685db-30d1-4c1d-980d-3cfb69cffbf3&quot;
+  }
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2qklEjqqMcXDvakR0b6CIf2tBGR" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build DamDda_BE.executor": "Run",
-    "Gradle.DamDda_BE [build].executor": "Run",
-    "Gradle.DamDda_BE [clean].executor": "Run",
-    "JUnit.MemberRepositoryTest.deleteMemberTest.executor": "Run",
-    "JUnit.MemberRepositoryTest.executor": "Run",
-    "JUnit.MemberRepositoryTest.findMemberByEmailTest.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.DamDdaApplication (1).executor": "Run",
-    "Spring Boot.DamDdaApplication.executor": "Run",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Github",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.Build DamDda_BE.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.DamDda_BE [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.DamDda_BE [clean].executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MemberRepositoryTest.deleteMemberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MemberRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MemberRepositoryTest.findMemberByEmailTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TokenProviderTest.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.DamDdaApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DamDdaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Jason Hwang/Downloads/DamDda_BE-main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.eightbit.damdda.DamDda.member.domain" />
@@ -135,10 +210,20 @@
       <recent name="org.eightbit.damdda.DamDda.member.domain" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.eightbit.damdda.DamDda.auth.repository.repositoryInterface" />
       <recent name="org.eightbit.damdda.DamDda.project.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.DamDdaApplication (1)">
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
     <configuration name="DamDda_BE [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -151,28 +236,6 @@
         <option name="taskNames">
           <list>
             <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="DamDda_BE [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -247,6 +310,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DamDdaApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="DamDda.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.eightbit.damdda.DamDda.DamDdaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DamDdaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="DamDda" />
@@ -255,15 +326,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.MemberRepositoryTest" />
-        <item itemvalue="JUnit.MemberRepositoryTest.deleteMemberTest" />
-        <item itemvalue="JUnit.MemberRepositoryTest.findMemberByEmailTest" />
-        <item itemvalue="Gradle.DamDda_BE [build]" />
-        <item itemvalue="Gradle.DamDda_BE [clean]" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -288,12 +350,33 @@
       <workItem from="1736248553771" duration="18000" />
       <workItem from="1736313794995" duration="9714000" />
       <workItem from="1736348740748" duration="8129000" />
-      <workItem from="1736359997171" duration="6935000" />
+      <workItem from="1736359997171" duration="13281000" />
+      <workItem from="1737041421815" duration="2221000" />
+      <workItem from="1737382850924" duration="5732000" />
+      <workItem from="1737532944648" duration="21319000" />
+      <workItem from="1737603232330" duration="33096000" />
+      <workItem from="1738056809362" duration="150000" />
+      <workItem from="1738057027983" duration="607000" />
+      <workItem from="1738057678269" duration="3476000" />
     </task>
+    <task id="LOCAL-00001" summary="📰 feat: member, project 관련 엔티티 작성, db 연결">
+      <option name="closed" value="true" />
+      <created>1736391037972</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736391037972</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value=" feat: member, projecr 관련 엔티티 작성, db 연결" />
+    <MESSAGE value=" feat: member, project 관련 엔티티 작성, db 연결" />
+    <option name="LAST_COMMIT_MESSAGE" value=" feat: member, project 관련 엔티티 작성, db 연결" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -302,11 +385,6 @@
           <properties class="org.springframework.beans.factory.BeanCreationException" package="org.springframework.beans.factory" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/eightbit/damdda/DamDda/member/domain/Member.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
