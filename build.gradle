@@ -4,7 +4,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
-group = 'org.eightbit.damdda'
+group = 'org.jiyoung.kikihi'
 version = '0.0.1-SNAPSHOT'
 
 java {
@@ -28,7 +28,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	runtimeOnly 'com.h2database:h2'
 
-
 	//web
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter'
@@ -42,10 +41,11 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
 	//docker
-	developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
+//	developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
 
-	//mysql
-	implementation group: 'com.mysql', name: 'mysql-connector-j', version: '9.1.0'
+	//h2
+	implementation 'com.h2database:h2'
+
 
 
 	//test
@@ -58,12 +58,13 @@ dependencies {
 	implementation 'io.jsonwebtoken:jjwt-api:0.12.3' // jwt 라이브러리
 	implementation 'io.jsonwebtoken:jjwt-impl:0.12.3' // jwt 라이브러리
 	implementation 'io.jsonwebtoken:jjwt-jackson:0.12.3' // jwt 라이브러리
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 
 	//swagger
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.3'
 
-
-
+	//redis
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
 
 	//implementation 'javax.xml.bind:jaxb-api:2.3.1'//xml문서와 자바 객체간 매핑 자동화
