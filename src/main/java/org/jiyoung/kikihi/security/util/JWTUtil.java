@@ -22,7 +22,8 @@ public class JWTUtil {
 
     public String getEmail(String token) {
     //token을 파싱해서 email을 리턴(토큰이 우리 서버에서 생성된건지,우리키랑 맞는지 확인)
-        return Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).getPayload().get("email", String.class);
+        return Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token)
+                .getPayload().get("email", String.class);
     }
 
 //    public String getRole(String token) {

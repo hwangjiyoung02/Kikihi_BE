@@ -3,9 +3,9 @@ package org.jiyoung.kikihi.security.config;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
-import org.jiyoung.kikihi.redis.RefreshRepository;
-import org.jiyoung.kikihi.oauth2.CustomOAuth2UserService;
-import org.jiyoung.kikihi.oauth2.handler.CustomSuccessHandler;
+import org.jiyoung.kikihi.infrastructure.redis.RefreshRepository;
+import org.jiyoung.kikihi.infrastructure.oauth2.CustomOAuth2UserService;
+import org.jiyoung.kikihi.infrastructure.oauth2.handler.CustomSuccessHandler;
 import org.jiyoung.kikihi.security.filter.CustomLogoutFilter;
 import org.jiyoung.kikihi.security.filter.JwtFilter;
 import org.jiyoung.kikihi.security.util.JWTUtil;

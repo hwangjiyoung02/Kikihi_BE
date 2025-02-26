@@ -1,9 +1,0 @@
-package org.jiyoung.kikihi.product.repository;
-
-import org.jiyoung.kikihi.product.domain.Tag;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
-@Repository
-public interface TagRepository extends JpaRepository<Tag, Long> {
-}

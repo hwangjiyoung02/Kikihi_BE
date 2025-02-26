@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @EnableCaching
 @EnableJpaAuditing
-@EnableJpaRepositories(basePackages = "org.jiyoung.kikihi.member.repository")
 @SpringBootApplication(scanBasePackages = "org.jiyoung.kikihi")
 public class KikihiApplication {
 	public static void main(String[] args) {

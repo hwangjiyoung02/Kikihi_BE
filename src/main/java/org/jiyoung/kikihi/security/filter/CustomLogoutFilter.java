@@ -6,7 +6,7 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.jiyoung.kikihi.redis.RefreshRepository;
+import org.jiyoung.kikihi.infrastructure.redis.RefreshRepository;
 import org.jiyoung.kikihi.security.util.JWTUtil;
 import org.springframework.web.filter.GenericFilterBean;
 
