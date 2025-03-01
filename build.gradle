@@ -24,47 +24,27 @@ repositories {
 }
 
 dependencies {
-	//jpa&h2
+
+	// JPA
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	runtimeOnly 'com.h2database:h2'
 	implementation 'com.h2database:h2'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 
-	//web
+	// Basic
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
-	//lombok
+	// Lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
-	//devtools
+	// devtools
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
 	//docker
 //	developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
-
-	//elastic Search
-	implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
-
-
-
-
-	//test
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-	// security
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	testImplementation 'org.springframework.security:spring-security-test'
-	implementation 'io.jsonwebtoken:jjwt-api:0.12.3' // jwt 라이브러리
-	implementation 'io.jsonwebtoken:jjwt-impl:0.12.3' // jwt 라이브러리
-	implementation 'io.jsonwebtoken:jjwt-jackson:0.12.3' // jwt 라이브러리
-	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-
-	//swagger
-	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.3'
 
 	//redis
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
@@ -72,6 +52,26 @@ dependencies {
 	//aws
 	implementation 'software.amazon.awssdk:s3:2.20.47' 	// AWS SDK v2 S3 의존성
 	implementation 'software.amazon.awssdk:sdk-core:2.20.47'	// AWS SDK v2 Core 의존성
+
+	//elastic Search
+//	implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+
+	// security
+//	implementation 'org.springframework.boot:spring-boot-starter-security'
+//    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+	// JWT
+//	implementation 'io.jsonwebtoken:jjwt-api:0.12.3' // jwt 라이브러리
+//	implementation 'io.jsonwebtoken:jjwt-impl:0.12.3' // jwt 라이브러리
+//	implementation 'io.jsonwebtoken:jjwt-jackson:0.12.3' // jwt 라이브러리
+
+	//swagger
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.3'
+
+	//test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	testImplementation 'org.springframework.security:spring-security-test'
 
 }
 tasks.named('test') {
