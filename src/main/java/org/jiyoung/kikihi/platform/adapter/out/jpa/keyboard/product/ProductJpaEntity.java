@@ -21,7 +21,7 @@ public class ProductJpaEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Long productId;
+    private Long id;
 
     @Column(name = "product_name", nullable = false)
     private String productName;
@@ -33,7 +33,7 @@ public class ProductJpaEntity extends BaseEntity {
     private String categoryCode;
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
-    private Integer productPrice = 0;
+    private int productPrice = 0;
 
     @Embedded
     private ProductSnippetJpaEntity snippet;
@@ -59,9 +59,10 @@ public class ProductJpaEntity extends BaseEntity {
     // toDomain
     public Product toDomain(){
         return Product.builder()
-                .productId(productId)
+                .id(id)
                 .productName(productName)
                 .categoryCode(categoryCode)
+                .productPrice(productPrice)
                 .description(description)
                 .snippet(snippet.toDomain())
                 .statistics(statistics.toDomain())

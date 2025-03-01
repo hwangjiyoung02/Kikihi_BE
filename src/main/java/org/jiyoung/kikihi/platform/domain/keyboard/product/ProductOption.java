@@ -9,7 +9,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class ProductOption {
 
-    private Long productOptionId;
+    private Long id;
 
     private Long productId;
 

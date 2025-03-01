@@ -15,7 +15,7 @@ public class ProductOptionJpaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_option_id")
-    private Long productOptionId;
+    private Long id;
 
     // 직접적인 연관관계 제거하고 ID만 저장
     @Column(name = "product_id", nullable = false)
@@ -49,7 +49,7 @@ public class ProductOptionJpaEntity {
     // toDomain
     public ProductOption toDomain() {
         return ProductOption.builder()
-                .productOptionId(productOptionId)
+                .id(id)
                 .productId(productId)
                 .color(color)
                 .switchType(switchType)

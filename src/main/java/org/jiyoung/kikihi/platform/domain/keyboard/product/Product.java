@@ -11,7 +11,7 @@ import org.jiyoung.kikihi.platform.domain.BaseDomain;
 @Builder
 public class Product extends BaseDomain {
 
-    private Long productId;
+    private Long id;
 
     private String productName;
 
@@ -19,14 +19,14 @@ public class Product extends BaseDomain {
 
     private String categoryCode;
 
-    private Integer productPrice = 0;
+    private int productPrice = 0;
 
     private ProductSnippet snippet;
 
     private ProductStatistics statistics;
 
     /// 생성자
-    public static Product from(String name, String description, String categoryCode, Integer price, ProductSnippet snippet, ProductStatistics statistics) {
+    public static Product from(String name, String description, String categoryCode, int price, ProductSnippet snippet, ProductStatistics statistics) {
         return Product.builder()
                 .productName(name)
                 .description(description)
