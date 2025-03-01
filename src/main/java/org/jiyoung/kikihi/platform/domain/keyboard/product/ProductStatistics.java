@@ -1,4 +1,4 @@
-package org.jiyoung.kikihi.platform.domain.product;
+package org.jiyoung.kikihi.platform.domain.keyboard.product;
 
 import lombok.*;
 

@@ -1,9 +1,9 @@
-package org.jiyoung.kikihi.platform.adapter.out.jpa.product;
+package org.jiyoung.kikihi.platform.adapter.out.jpa.keyboard.product;
 
 import jakarta.persistence.*;
 import lombok.*;
 import org.jiyoung.kikihi.platform.adapter.out.jpa.BaseEntity;
-import org.jiyoung.kikihi.platform.domain.product.Product;
+import org.jiyoung.kikihi.platform.domain.keyboard.product.Product;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 
@@ -29,8 +29,8 @@ public class ProductJpaEntity extends BaseEntity {
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
-    @Column(name = "category_id", nullable = false)
-    private Long categoryId;
+    @Column(name = "category_code", nullable = false)
+    private String categoryCode;
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
     private Integer productPrice = 0;
@@ -49,7 +49,7 @@ public class ProductJpaEntity extends BaseEntity {
         return ProductJpaEntity.builder()
                 .productName(product.getProductName())
                 .description(product.getDescription())
-                .categoryId(product.getProductId())
+                .categoryCode(product.getCategoryCode())
                 .productPrice(product.getProductPrice())
                 .snippet(ProductSnippetJpaEntity.from(product.getSnippet()))
                 .statistics(ProductStatisticsJpaEntity.from(product.getStatistics()))
@@ -61,7 +61,7 @@ public class ProductJpaEntity extends BaseEntity {
         return Product.builder()
                 .productId(productId)
                 .productName(productName)
-                .categoryId(categoryId)
+                .categoryCode(categoryCode)
                 .description(description)
                 .snippet(snippet.toDomain())
                 .statistics(statistics.toDomain())

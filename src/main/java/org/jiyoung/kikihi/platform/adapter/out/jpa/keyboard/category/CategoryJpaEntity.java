@@ -1,8 +1,8 @@
-package org.jiyoung.kikihi.platform.adapter.out.jpa.product.category;
+package org.jiyoung.kikihi.platform.adapter.out.jpa.keyboard.category;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.jiyoung.kikihi.platform.domain.category.Category;
+import org.jiyoung.kikihi.platform.domain.keyboard.category.Category;
 
 @Entity
 @Getter

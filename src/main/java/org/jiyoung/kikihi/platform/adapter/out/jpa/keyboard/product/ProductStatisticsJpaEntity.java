@@ -1,8 +1,8 @@
-package org.jiyoung.kikihi.platform.adapter.out.jpa.product;
+package org.jiyoung.kikihi.platform.adapter.out.jpa.keyboard.product;
 
 import jakarta.persistence.Embeddable;
 import lombok.*;
-import org.jiyoung.kikihi.platform.domain.product.ProductStatistics;
+import org.jiyoung.kikihi.platform.domain.keyboard.product.ProductStatistics;
 
 @Getter
 @Builder

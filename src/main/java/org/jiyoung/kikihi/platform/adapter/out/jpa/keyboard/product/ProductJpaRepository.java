@@ -1,4 +1,4 @@
-package org.jiyoung.kikihi.platform.adapter.out.jpa.product;
+package org.jiyoung.kikihi.platform.adapter.out.jpa.keyboard.product;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,4 +14,10 @@ public interface ProductJpaRepository extends JpaRepository<ProductJpaEntity, Lo
 
     // 페이징과 정렬을 고려한 상품 목록 조회
     Page<ProductJpaEntity> findAll(Specification<ProductJpaEntity> specification, Pageable pageable);
+
+    // 최신순 조회
+    Page<ProductJpaEntity> findAllByOrderByCreatedAtDesc(Pageable pageable);
+
+    // 좋아요순 조회
+    Page<ProductJpaEntity> findAllByOrderByStatistics_LikeCountDesc(Pageable pageable);
 }
