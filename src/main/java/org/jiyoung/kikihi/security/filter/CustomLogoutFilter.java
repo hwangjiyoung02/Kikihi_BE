@@ -70,7 +70,7 @@ public class CustomLogoutFilter extends GenericFilterBean {
         }
 
         // 토큰이 refresh인지 확인 (발급시 페이로드에 명시)
-        String category = jwtUtil.getCategory(refresh);
+        String category = jwtUtil.getEmail(refresh);
         if (!category.equals("refresh")) {
 
             //response status code

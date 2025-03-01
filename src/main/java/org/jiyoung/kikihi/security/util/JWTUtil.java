@@ -26,40 +26,28 @@ public class JWTUtil {
                 .getPayload().get("email", String.class);
     }
 
-//    public String getRole(String token) {
-//
-//        return Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).getPayload().get("role", String.class);
-//    }
+    public String getRole(String token) {
+
+        return Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).getPayload()
+                .get("role", String.class);
+    }
 
     public Boolean isExpired(String token) {
 
         return Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).getPayload().getExpiration().before(new Date());
     }
 
-//    public String createJwt(String email, Long expiredMs) {
-//
-//        return Jwts.builder()
-//                .claim("email", email)
-//                .issuedAt(new Date(System.currentTimeMillis()))
-//                .expiration(new Date(System.currentTimeMillis() + expiredMs))
-//                .signWith(secretKey)
-//                .compact();
-//    }
-
     // 시그니처가 달라도 상관없음
-    public String createJwt(String category,String email, Long expiredMs) {
+    public String createJwt(String email,String role, Long expiredMs) {
 
         return Jwts.builder()
-                .claim("category", category)
                 .claim("email", email)
+                .claim("role",role)
                 .issuedAt(new Date(System.currentTimeMillis()))
                 .expiration(new Date(System.currentTimeMillis() + expiredMs))
                 .signWith(secretKey)
                 .compact();
     }
 
-    //토큰 판단용 메서드
-    public String getCategory(String token){
-        return Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).getPayload().get("category", String.class);
-    }
+
 }

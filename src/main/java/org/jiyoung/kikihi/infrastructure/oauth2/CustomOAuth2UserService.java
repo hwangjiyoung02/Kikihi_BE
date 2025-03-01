@@ -42,36 +42,33 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         }
 
       //리소스(네이버,구글) 서버에서 발급받은 정보(id)로 사용자를 특정할 아이디값을 만듦 (ex: naver1234)
-      String userName=response.getProvider()+" "+response.getProviderId();
+      String name=response.getProvider()+" "+response.getProviderId();
       System.out.println("Provider: " + response.getProvider());
       System.out.println("ProviderId: " + response.getProviderId());
 
-      User existData=memberRepository.findByName(userName);
+      User existData=memberRepository.findByName(name);
 
       if(existData==null){
           User user = User.builder()
-                  .userName(userName)
+                  .name(name)
                   .email(response.getEmail())
-                .name(response.getName())
                 .build();
           System.out.println("member: "+ user);
           memberRepository.save(user);
 
           OAuthUserDTO oAuthUserDTO = OAuthUserDTO.builder()
-              .username(userName)
+              .name(name)
               .name(response.getName())
               .build();
             return new CustomOAuth2User(oAuthUserDTO);
       }else {
           // 업데이트
           existData.setEmail(response.getEmail());
-          existData.setName(response.getName());
           System.out.println("existData: "+existData);
 
           memberRepository.save(existData);
 
           OAuthUserDTO oAuthUserDTO = OAuthUserDTO.builder()
-              .username(existData.getUsername())
               .name(response.getName())
               .build();
             return new CustomOAuth2User(oAuthUserDTO);

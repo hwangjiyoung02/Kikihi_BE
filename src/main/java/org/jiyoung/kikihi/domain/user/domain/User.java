@@ -28,14 +28,13 @@ public class User implements UserDetails {
     @Column(nullable = true)
     private String password;
 
+    @Column(nullable =false)
+    private String role;
+
     //setter
     @Setter
     @Column(nullable = true)
     private String name;
-
-    @Setter
-    @Column(nullable = true)
-    private String userName;
 
     //권한 반환
     @Override
@@ -68,21 +67,25 @@ public class User implements UserDetails {
         return true;
     }
 
-    //생성자
-    @Builder
-    public User(String email, String password){
-        this.email = email;
-        this.password = password;
+
+    //생성 메서드
+    public static User from(String email, String password,String name){
+        return User.builder()
+                .email(email)
+                .password(password)
+                .role("USER")
+                .name(name)
+                .build();
     }
-
-
     //생성 메서드
     public static User from(String email, String password){
         return User.builder()
                 .email(email)
                 .password(password)
+                .role("USER")
                 .build();
     }
+
 
 
 

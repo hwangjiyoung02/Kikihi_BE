@@ -30,7 +30,7 @@ public class ProductSearchController {
     @GetMapping
     public ApiResponse<List<Product>> search(@RequestParam(name = "keyword") String keyword) {
         try{
-        User user=User.from("hjy020714@gmail.com","123456");
+        User user=User.from("hjy020714@gmail.com","123456","jiyoung");
         List<Product> products = elasticSearchService.searchByKeyword(keyword, Limit.of(10));
             System.out.println("products:"+products);
         return ApiResponse.ok(products);}

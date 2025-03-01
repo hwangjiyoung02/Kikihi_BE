@@ -7,13 +7,13 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class JwtUserDTO {
+public class JoinRequest {
     private String email;
     private String password;
     private String name;
 
     @JsonCreator
-    public JwtUserDTO(@JsonProperty("email") String email, @JsonProperty("password") String password, @JsonProperty("name") String name){
+    public JoinRequest(@JsonProperty("email") String email, @JsonProperty("password") String password, @JsonProperty("name") String name){
         this.email = email;
         this.password = password;
         this.name = name;
