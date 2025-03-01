@@ -1,4 +1,4 @@
-package org.jiyoung.kikihi.config;
+package org.jiyoung.kikihi.config.elasticsearch;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.elasticsearch.client.ClientConfiguration;

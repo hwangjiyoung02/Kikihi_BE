@@ -27,6 +27,8 @@ dependencies {
 	//jpa&h2
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	runtimeOnly 'com.h2database:h2'
+	implementation 'com.h2database:h2'
+	runtimeOnly 'com.mysql:mysql-connector-j'
 
 	//web
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -43,8 +45,9 @@ dependencies {
 	//docker
 //	developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
 
-	//h2
-	implementation 'com.h2database:h2'
+	//elastic Search
+	implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+
 
 
 
@@ -66,8 +69,10 @@ dependencies {
 	//redis
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
+	//aws
+	implementation 'software.amazon.awssdk:s3:2.20.47' 	// AWS SDK v2 S3 의존성
+	implementation 'software.amazon.awssdk:sdk-core:2.20.47'	// AWS SDK v2 Core 의존성
 
-	//implementation 'javax.xml.bind:jaxb-api:2.3.1'//xml문서와 자바 객체간 매핑 자동화
 }
 tasks.named('test') {
 	useJUnitPlatform()

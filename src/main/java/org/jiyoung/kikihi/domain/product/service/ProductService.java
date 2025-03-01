@@ -7,6 +7,7 @@ import org.jiyoung.kikihi.domain.product.dto.request.*;
 import org.jiyoung.kikihi.domain.product.dto.response.ProductResponseDto;
 import org.jiyoung.kikihi.domain.product.entity.*;
 import org.jiyoung.kikihi.domain.product.repository.*;
+import org.jiyoung.kikihi.elasticSearch.ElasticSearchRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -55,6 +56,7 @@ public class ProductService {
             productOptionRepository.saveAll(product.getProductOptions());
             productImgRepository.saveAll(product.getProductImgs());
             productTagRepository.saveAll(product.getProductTags());
+
 
 
 
