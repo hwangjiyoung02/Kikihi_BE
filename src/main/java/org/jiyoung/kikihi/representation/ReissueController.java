@@ -3,7 +3,7 @@ package org.jiyoung.kikihi.representation;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.jiyoung.kikihi.domain.member.service.ReissueService;
+import org.jiyoung.kikihi.domain.user.service.ReissueService;
 import org.jiyoung.kikihi.security.util.JWTUtil;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

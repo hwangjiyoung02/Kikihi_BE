@@ -1,9 +1,9 @@
-package org.jiyoung.kikihi.domain.member.service;
+package org.jiyoung.kikihi.domain.user.service;
 
 import lombok.RequiredArgsConstructor;
-import org.jiyoung.kikihi.domain.member.domain.CustomMemberDetails;
-import org.jiyoung.kikihi.domain.member.domain.Member;
-import org.jiyoung.kikihi.domain.member.repository.MemberRepository;
+import org.jiyoung.kikihi.domain.user.domain.CustomMemberDetails;
+import org.jiyoung.kikihi.domain.user.domain.User;
+import org.jiyoung.kikihi.domain.user.repository.MemberRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
@@ -16,9 +16,9 @@ public class CustomeMemberDetailsService implements UserDetailsService {
 
     @Override// 사용자 email로 사용자 정보를 가져오는 메서드 - 필수로 구현해야함
     public UserDetails loadUserByUsername(String email){
-        Member member=memberRepository.findByEmail(email).orElseThrow(()-> new IllegalArgumentException(email));
-        if(member!=null){
-            return new CustomMemberDetails(member);
+        User user =memberRepository.findByEmail(email).orElseThrow(()-> new IllegalArgumentException(email));
+        if(user !=null){
+            return new CustomMemberDetails(user);
         }
 
         return null;

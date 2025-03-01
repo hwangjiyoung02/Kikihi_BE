@@ -1,4 +1,4 @@
-package org.jiyoung.kikihi.domain.member.dto;
+package org.jiyoung.kikihi.domain.user.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

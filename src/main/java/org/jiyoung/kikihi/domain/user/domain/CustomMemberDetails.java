@@ -1,4 +1,4 @@
-package org.jiyoung.kikihi.domain.member.domain;
+package org.jiyoung.kikihi.domain.user.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -9,7 +9,7 @@ import java.util.Collection;
 
 @RequiredArgsConstructor
 public class CustomMemberDetails implements UserDetails {
-    private final Member member;
+    private final User user;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -25,12 +25,12 @@ public class CustomMemberDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return member.getPassword();
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return member.getEmail();
+        return user.getEmail();
     }
 
     @Override

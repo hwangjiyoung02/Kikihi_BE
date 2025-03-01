@@ -1,6 +1,6 @@
 package org.jiyoung.kikihi.infrastructure.oauth2;
 
-import org.jiyoung.kikihi.domain.member.dto.OAuthUserDTO;
+import org.jiyoung.kikihi.domain.user.dto.OAuthUserDTO;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 

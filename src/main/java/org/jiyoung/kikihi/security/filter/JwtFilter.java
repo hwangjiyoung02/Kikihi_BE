@@ -7,8 +7,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.jiyoung.kikihi.domain.member.domain.CustomMemberDetails;
-import org.jiyoung.kikihi.domain.member.domain.Member;
+import org.jiyoung.kikihi.domain.user.domain.CustomMemberDetails;
+import org.jiyoung.kikihi.domain.user.domain.User;
 import org.jiyoung.kikihi.security.util.JWTUtil;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -66,8 +66,8 @@ public class JwtFilter extends OncePerRequestFilter {
         String username = jwtUtil.getEmail(accessToken);
 
         String email = jwtUtil.getEmail(accessToken);
-        Member member = Member.builder().email(email).password("temppass").build();
-        CustomMemberDetails customMemberDetails = new CustomMemberDetails(member);
+        User user = User.builder().email(email).password("temppass").build();
+        CustomMemberDetails customMemberDetails = new CustomMemberDetails(user);
 
         Authentication authToken = new UsernamePasswordAuthenticationToken(customMemberDetails, null, customMemberDetails.getAuthorities());
         SecurityContextHolder.getContext().setAuthentication(authToken);

@@ -1,4 +1,4 @@
-package org.jiyoung.kikihi.domain.member.domain;
+package org.jiyoung.kikihi.domain.user.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,33 +10,37 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity
-@Table(name = "members")
+@Table(name = "users")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)// 상속받은 얘만 쓸수 있게
 @AllArgsConstructor
 @Getter
 @Builder
-public class Member implements UserDetails {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "member_id")
-    private Long memberId;
+    @Column(name = "user_id")
+    private Long userId;
 
+    @Setter
     @Column(unique = true, nullable = false)
     private String email;
 
     @Column(nullable = true)
     private String password;
 
+    //setter
+    @Setter
     @Column(nullable = true)
     private String name;
 
+    @Setter
     @Column(nullable = true)
     private String userName;
 
     //권한 반환
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities(){
-        return List.of(new SimpleGrantedAuthority("member"));
+        return List.of(new SimpleGrantedAuthority("user"));
     }
 
     @Override
@@ -66,24 +70,19 @@ public class Member implements UserDetails {
 
     //생성자
     @Builder
-    public Member(String email, String password){
+    public User(String email, String password){
         this.email = email;
         this.password = password;
     }
-    //setter
-    public void setName(String name){
-        this.name = name;
-    }
-    public void setUserName(String userName){
-        this.userName = userName;
-    }
-    public void setEmail(String email){
-        this.email = email;
-    }
-
 
 
     //생성 메서드
+    public static User from(String email, String password){
+        return User.builder()
+                .email(email)
+                .password(password)
+                .build();
+    }
 
 
 

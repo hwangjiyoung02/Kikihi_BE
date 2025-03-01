@@ -43,7 +43,7 @@ public class ProductTemporarySaveService {
     }
 
     // 이미지 정보 저장
-    private void saveImageInfo(ProductImageDto imageDto) {
+    private void saveImageInfo(ProductImgDto imageDto) {
         // 예: 이미지 URL들을 세션에 저장
         session.setAttribute("productThumbnailImage", imageDto.getThumbnailImage());
         session.setAttribute("productMainImages", imageDto.getMainImages());
@@ -58,7 +58,7 @@ public class ProductTemporarySaveService {
     }
 
     // 태그 정보 저장
-    private void saveTags(ProductTagsDto tagsDto) {
+    private void saveTags(ProductTagDto tagsDto) {
         // 예: 태그 정보를 세션에 저장
         session.setAttribute("productTags", tagsDto.getTags());
     }

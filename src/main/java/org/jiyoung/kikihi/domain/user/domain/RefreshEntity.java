@@ -1,4 +1,4 @@
-package org.jiyoung.kikihi.domain.member.domain;
+package org.jiyoung.kikihi.domain.user.domain;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;

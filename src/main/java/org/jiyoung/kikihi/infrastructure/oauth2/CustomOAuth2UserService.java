@@ -1,11 +1,11 @@
 package org.jiyoung.kikihi.infrastructure.oauth2;
 
-import org.jiyoung.kikihi.domain.member.domain.Member;
-import org.jiyoung.kikihi.domain.member.repository.MemberRepository;
+import org.jiyoung.kikihi.domain.user.domain.User;
+import org.jiyoung.kikihi.domain.user.repository.MemberRepository;
 import org.jiyoung.kikihi.infrastructure.oauth2.response.GoogleResponse;
 import org.jiyoung.kikihi.infrastructure.oauth2.response.NaverResponse;
 import org.jiyoung.kikihi.infrastructure.oauth2.response.OAuth2Response;
-import org.jiyoung.kikihi.domain.member.dto.OAuthUserDTO;
+import org.jiyoung.kikihi.domain.user.dto.OAuthUserDTO;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
@@ -46,16 +46,16 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
       System.out.println("Provider: " + response.getProvider());
       System.out.println("ProviderId: " + response.getProviderId());
 
-      Member existData=memberRepository.findByName(userName);
+      User existData=memberRepository.findByName(userName);
 
       if(existData==null){
-          Member member=Member.builder()
+          User user = User.builder()
                   .userName(userName)
                   .email(response.getEmail())
                 .name(response.getName())
                 .build();
-          System.out.println("member: "+member);
-          memberRepository.save(member);
+          System.out.println("member: "+ user);
+          memberRepository.save(user);
 
           OAuthUserDTO oAuthUserDTO = OAuthUserDTO.builder()
               .username(userName)

@@ -1,7 +1,7 @@
 package org.jiyoung.kikihi.infrastructure.redis;
 
 import jakarta.transaction.Transactional;
-import org.jiyoung.kikihi.domain.member.domain.RefreshEntity;
+import org.jiyoung.kikihi.domain.user.domain.RefreshEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

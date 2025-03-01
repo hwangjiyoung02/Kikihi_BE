@@ -1,10 +1,8 @@
 package org.jiyoung.kikihi.domain.product.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.jiyoung.kikihi.domain.product.dto.request.ProductImgDto;
 
 import java.util.List;
 
@@ -21,6 +19,7 @@ public class ProductImg {
     @Column(name = "product_img_id")
     private Long productImgId;
 
+    @Setter // product엔티티에서 연관관계 매핑!!
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
@@ -44,4 +43,14 @@ public class ProductImg {
     @Lob  // HTML 저장을 위해 추가
     @Column(columnDefinition = "TEXT")
     private String descriptionHtml;
+
+    public static ProductImg from(ProductImgDto productImgDto) {
+        ProductImg productImg = ProductImg.builder()
+                .thumbnailImg(productImgDto.getThumbnailImage())
+                .mainImgs(productImgDto.getMainImages())
+                .descriptionImgs(productImgDto.getDescriptionImages())
+                .descriptionHtml(productImgDto.getDescriptionHtml())
+                .build();
+        return productImg;
+    }
 }

@@ -1,8 +1,8 @@
-package org.jiyoung.kikihi.domain.member.service;
+package org.jiyoung.kikihi.domain.user.service;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.http.Cookie;
-import org.jiyoung.kikihi.domain.member.domain.RefreshEntity;
+import org.jiyoung.kikihi.domain.user.domain.RefreshEntity;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
