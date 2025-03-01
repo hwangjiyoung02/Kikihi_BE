@@ -1,8 +1,8 @@
-package org.jiyoung.kikihi.platform.adapter.out.jpa.product;
+package org.jiyoung.kikihi.platform.adapter.out.jpa.keyboard.product;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.jiyoung.kikihi.platform.domain.product.ProductOption;
+import org.jiyoung.kikihi.platform.domain.keyboard.product.ProductOption;
 
 @Entity
 @Getter
@@ -24,15 +24,25 @@ public class ProductOptionJpaEntity {
     @Column(name = "color", nullable = true)
     private String color;
 
-    @Column(name = "option", nullable = false)
-    private String option;
+    @Column(name = "switchType", nullable = false)
+    private String switchType;
+
+    @Column(name = "layout", nullable = false)
+    private String layout;
+
+    private boolean isWireless;
+
+    private int extraPrice; // 옵션 추가 가격
 
     // from
     public static ProductOptionJpaEntity from(ProductOption option) {
         return ProductOptionJpaEntity.builder()
                 .productId(option.getProductId()) // ID만 저장
                 .color(option.getColor())
-                .option(option.getOption())
+                .switchType(option.getSwitchType())
+                .layout(option.getLayout())
+                .isWireless(option.isWireless())
+                .extraPrice(option.getExtraPrice())
                 .build();
     }
 
@@ -42,7 +52,10 @@ public class ProductOptionJpaEntity {
                 .productOptionId(productOptionId)
                 .productId(productId)
                 .color(color)
-                .option(option)
+                .switchType(switchType)
+                .layout(layout)
+                .isWireless(isWireless)
+                .extraPrice(extraPrice)
                 .build();
     }
 }
