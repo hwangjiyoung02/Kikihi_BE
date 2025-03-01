@@ -1,5 +1,6 @@
 package org.jiyoung.kikihi.domain.product.service;
 
+import com.jayway.jsonpath.Predicate;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 
@@ -7,7 +8,11 @@ import org.jiyoung.kikihi.domain.product.dto.request.*;
 import org.jiyoung.kikihi.domain.product.dto.response.ProductResponseDto;
 import org.jiyoung.kikihi.domain.product.entity.*;
 import org.jiyoung.kikihi.domain.product.repository.*;
-import org.jiyoung.kikihi.elasticSearch.ElasticSearchRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -106,11 +111,40 @@ public class ProductService {
     }
 
     // 상품 목록 제공 (페이징, 정렬, 필터링)
-//    public Page<ProductResponseDto> getAllProducts(int page, int size, String sortBy, String direction) {
-//        Sort sort = direction.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
-//        Pageable pageable = PageRequest.of(page, size, sort);
-//        return productRepository.findAll(pageable);
-//    }
+    public Page<ProductResponseDto> getAllProducts(int page, int size, String sortBy, String direction, String productTitle, Double minPrice, Double maxPrice) {
+        // 정렬 설정
+        Sort sort = direction.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
+        Pageable pageable = PageRequest.of(page, size, sort);
+
+        // 필터링 조건을 Specification으로 처리
+        Specification<Product> specification = buildSpecification(productTitle, minPrice, maxPrice);
+
+        // Specification을 사용한 필터링, 페이징, 정렬
+        Page<Product> productPage = productRepository.findAll(specification, pageable);
+
+        // Page<Product>를 ProductResponseDto로 변환하여 반환
+        return productPage.map(product -> ProductResponseDto.fromEntity(product));
+    }
+    // 동적 쿼리 생성 (필터링 조건을 Specification으로 처리)
+    private Specification<Product> buildSpecification(String productTitle, Double minPrice, Double maxPrice) {
+        return (root, query, criteriaBuilder) -> {
+            List<Predicate> predicates = new ArrayList<>();
+
+            if (productTitle != null && !productTitle.isEmpty()) {
+                predicates.add((Predicate) criteriaBuilder.like(root.get("productTitle"), "%" + productTitle + "%"));
+            }
+
+            if (minPrice != null) {
+                predicates.add((Predicate) criteriaBuilder.greaterThanOrEqualTo(root.get("price"), minPrice));
+            }
+
+            if (maxPrice != null) {
+                predicates.add((Predicate) criteriaBuilder.lessThanOrEqualTo(root.get("price"), maxPrice));
+            }
+
+            return (jakarta.persistence.criteria.Predicate) predicates;
+        };
+    }
 
     // 상품 좋아요 등록하기
     public void likeProduct(Long userId, Long productId) {

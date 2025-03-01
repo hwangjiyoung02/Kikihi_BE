@@ -68,13 +68,20 @@ public class ProductController {
         return ApiResponse.ok(productResponseDto);
     }
 
-    // 상품 목록 조회
-//    @GetMapping
-//    public ApiResponse<List<ProductResponseDto>> getAllProducts() {
-//        Page<Product> productList = productService.getAllProducts();
-//        return ApiResponse.ok(productList);
-//    }
+    // 상품 목록 제공 (페이징, 정렬, 필터링)
+    @GetMapping
+    public ApiResponse<Page<ProductResponseDto>> getAllProducts(
+            @RequestParam(value = "page", defaultValue = "0") int page,
+            @RequestParam(value = "size", defaultValue = "10") int size,
+            @RequestParam(value = "sortBy", defaultValue = "productTitle") String sortBy,
+            @RequestParam(value = "direction", defaultValue = "asc") String direction,
+            @RequestParam(value = "productTitle", required = false) String productTitle,
+            @RequestParam(value = "minPrice", required = false) Double minPrice,
+            @RequestParam(value = "maxPrice", required = false) Double maxPrice) {
 
+        Page<ProductResponseDto> products = productService.getAllProducts(page, size, sortBy, direction, productTitle, minPrice, maxPrice);
+        return ApiResponse.ok(products);
+    }
 
 
 
