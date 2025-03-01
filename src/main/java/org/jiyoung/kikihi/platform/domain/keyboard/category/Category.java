@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Category {
 
-    private Long categoryId;
+    private Long id;
 
     private Category parent;
 

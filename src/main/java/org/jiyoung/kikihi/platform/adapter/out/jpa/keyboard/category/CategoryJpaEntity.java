@@ -14,7 +14,7 @@ public class CategoryJpaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long categoryId;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id") // 부모가 없는 최상위 카테고리 가능
@@ -31,7 +31,7 @@ public class CategoryJpaEntity {
     // from
     public static CategoryJpaEntity from(Category category) {
         return CategoryJpaEntity.builder()
-                .categoryId(category.getCategoryId())
+                .id(category.getId())
                 .name(category.getName())
                 .parent(category.getParent() != null ? CategoryJpaEntity.from(category.getParent()) : null)
                 .code(category.getCode())
@@ -42,7 +42,7 @@ public class CategoryJpaEntity {
     // toDomain (CategoryJpaEntity -> Category 변환)
     public Category toDomain() {
         return Category.builder()
-                .categoryId(categoryId)
+                .id(id)
                 .name(name)
                 .parent(parent != null ? parent.toDomain() : null)
                 .code(code)
