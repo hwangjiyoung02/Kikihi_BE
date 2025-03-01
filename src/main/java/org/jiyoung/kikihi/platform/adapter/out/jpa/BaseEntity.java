@@ -1,23 +1,23 @@
 package org.jiyoung.kikihi.platform.adapter.out.jpa;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
-@EntityListeners(AuditingEntityListener.class)
 @Getter
 @MappedSuperclass
-public class TimeBaseEntity {
-    @CreatedDate
-    @Column(updatable = false)
-    private LocalDateTime regDt;
+@EntityListeners(AuditingEntityListener.class) // ✅ Auditing 기능 활성화
+public abstract class BaseEntity {
 
-    @LastModifiedBy
-    private LocalDateTime upDt;
+    @CreatedDate
+    private LocalDateTime createdAt; // 생성일 자동 설정
+
+    @LastModifiedDate
+    private LocalDateTime updatedAt; // 수정일 자동 설정
 }
+

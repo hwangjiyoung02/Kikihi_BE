@@ -7,11 +7,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Long> {
+public interface ProductJpaRepository extends JpaRepository<ProductJpaEntity, Long> {
 
     // 좋아요 목록 조회
 //    List<Product> findTopLikedProducts();
 
     // 페이징과 정렬을 고려한 상품 목록 조회
-    Page<Product> findAll(Specification<Product> specification, Pageable pageable);
+    Page<ProductJpaEntity> findAll(Specification<ProductJpaEntity> specification, Pageable pageable);
 }

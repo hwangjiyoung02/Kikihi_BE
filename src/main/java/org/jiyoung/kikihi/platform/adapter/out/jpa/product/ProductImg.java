@@ -22,7 +22,7 @@ public class ProductImg {
     @Setter // product엔티티에서 연관관계 매핑!!
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", nullable = false)
-    private Product product;
+    private ProductJpaEntity productJpaEntity;
 
     // 썸네일 이미지 URL
     @Column(name = "thumbnail_img", nullable = false)
@@ -53,4 +53,9 @@ public class ProductImg {
                 .build();
         return productImg;
     }
+
+    // from
+
+    // toDomain
+
 }
