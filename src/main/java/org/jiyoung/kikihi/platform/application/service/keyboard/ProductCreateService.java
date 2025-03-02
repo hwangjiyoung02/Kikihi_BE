@@ -9,7 +9,6 @@ import org.jiyoung.kikihi.platform.application.out.keyboard.category.CategoryPor
 import org.jiyoung.kikihi.platform.application.out.keyboard.product.OptionPort;
 import org.jiyoung.kikihi.platform.application.out.keyboard.product.SaveProductPort;
 import org.jiyoung.kikihi.platform.application.out.keyboard.product.LoadProductPort;
-import org.jiyoung.kikihi.platform.application.out.keyboard.tag.TagPort;
 import org.jiyoung.kikihi.platform.domain.keyboard.product.Product;
 import org.jiyoung.kikihi.platform.domain.keyboard.product.ProductOption;
 import org.springframework.stereotype.Service;
@@ -26,7 +25,6 @@ public class ProductCreateService implements CreateProductUseCase, CreateTempora
     // 의존성
     private final CategoryPort categoryPort;
     private final OptionPort optionPort;
-    private final TagPort tagPort;
 
     @Override
     public Product createProduct(ProductRequest request) {
