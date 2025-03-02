@@ -44,7 +44,8 @@ public class ProductJpaEntity extends BaseEntity {
     @org.springframework.data.annotation.Id
     private String elasticsearchId;
 
-    // from
+    // from | DTO를 진짜 JPA 엔티티로!!
+    // 오 주여!!
     public static ProductJpaEntity from(Product product) {
         return ProductJpaEntity.builder()
                 .productName(product.getProductName())
@@ -56,7 +57,7 @@ public class ProductJpaEntity extends BaseEntity {
                 .build();
     }
 
-    // toDomain
+    // toDomain | JPA 엔티티를 DTO같은걸로!
     public Product toDomain(){
         return Product.builder()
                 .id(id)
