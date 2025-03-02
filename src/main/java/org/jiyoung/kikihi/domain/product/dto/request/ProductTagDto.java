@@ -20,7 +20,7 @@ public class ProductTagDto {
 
     public static ProductTagDto from(ProductTag productTag) {
         return ProductTagDto.builder()
-                .tags((List<String>) productTag.getTag())
+                .tags((List<String>) productTag)
                 .build();
     }
 

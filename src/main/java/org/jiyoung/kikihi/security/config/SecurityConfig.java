@@ -5,7 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.jiyoung.kikihi.infrastructure.redis.RefreshRepository;
 import org.jiyoung.kikihi.infrastructure.oauth2.CustomOAuth2UserService;
-import org.jiyoung.kikihi.infrastructure.oauth2.handler.CustomSuccessHandler;
+//import org.jiyoung.kikihi.infrastructure.oauth2.handler.CustomSuccessHandler;
 import org.jiyoung.kikihi.security.filter.JwtFilter;
 import org.jiyoung.kikihi.security.util.JWTUtil;
 import org.jiyoung.kikihi.security.filter.LoginFilter;
@@ -35,7 +35,7 @@ public class SecurityConfig {
     //CustomOAuth2UserService 주입
     private final CustomOAuth2UserService customOAuth2UserService;
     //핸들러 주입
-    private final CustomSuccessHandler customSuccessHandler;
+//    private final CustomSuccessHandler customSuccessHandler;
     //JWTUtil 주입
     private final JWTUtil jwtUtil;
     //refreshRepository 주입
@@ -56,9 +56,10 @@ public class SecurityConfig {
                 .cors(corsCustomizer -> corsCustomizer.configurationSource(request -> {
                     CorsConfiguration configuration = new CorsConfiguration();
                     configuration.setAllowedOrigins(Arrays.asList(
-                            "https://d1t9cmfryhhcaq.cloudfront.net",
-                            "http://localhost:9000",
-                            "http://127.0.0.1:9000"
+//                            "https://d1t9cmfryhhcaq.cloudfront.net",
+//                            "http://localhost:9000",
+//                            "http://127.0.0.1:9000"
+                            "/**"
                     ));
                     configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                     configuration.setAllowCredentials(true);
@@ -84,7 +85,7 @@ public class SecurityConfig {
         // 경로별 인가 작업
         http
                 .authorizeHttpRequests(((auth) -> auth.requestMatchers("/h2-console/**","/join",
-                                "/login","/","/reissue","/oauth2/**").permitAll()
+                                "/login","/","/reissue","/oauth2/**","/**").permitAll()
                         .anyRequest().authenticated()));
         //필터 추가
         http

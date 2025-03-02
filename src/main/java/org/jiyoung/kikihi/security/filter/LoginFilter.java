@@ -15,9 +15,12 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Iterator;
 
 //강제로 만든 커스텀 필터~ 로그인 성공시 jwt토큰 생성
 //securityConfig에서 필터 추가
@@ -56,9 +59,16 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
             response.getWriter().print("email or role is null");
             return;
         }
+
+
+        Collection<? extends GrantedAuthority> authorities=authentication.getAuthorities();
+        Iterator<? extends GrantedAuthority> iterator=authorities.iterator();
+        GrantedAuthority auth= iterator.next();
+
          //4. refresh,access 토큰 생성
-//        String access=jwtUtil.createJwt("access",email,600000L);
-//        String refresh=jwtUtil.createJwt("refresh",email,84000000L);
+        String access=jwtUtil.createJwt(email,role,600000L);
+        String refresh=jwtUtil.createJwt(email,role,84000000L);
+
 //        RefreshToken redis = new RefreshToken(refresh);
 //        RefreshEntity refreshEntity = RefreshEntity.builder()
 //                .username(email)
@@ -69,16 +79,16 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
 //        System.out.println("[loginfilter] 발급된 Access Token: " + access);
 
 //
-//        //응답 설정
-//        response.setContentType("application/json;charset=UTF-8");
-//        response.setHeader("Authorization", "Bearer " + access);
-//        response.addCookie(createCookie("refresh",refresh));
-//        response.setStatus(HttpStatus.OK.value());
+        //응답 설정
+        response.setContentType("application/json;charset=UTF-8");
+        response.setHeader("access",access);
+        response.addCookie(createCookie("refresh",refresh));
+        response.setStatus(HttpStatus.OK.value());
 
 
         //UserDetailsS
         CustomMemberDetails customUserDetails = (CustomMemberDetails) authentication.getPrincipal();
-        String token = jwtUtil.createJwt(email, role,60*60*60L);
+        String token = jwtUtil.createJwt(email, role,60*60*100L);
         response.addHeader("Authorization", "Bearer " + token);
         System.out.println("로그인 성공");
 
@@ -94,6 +104,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
         response.setStatus(401);
     }
 
+    //토큰 심화
     private Cookie createCookie(String key, String value){
         Cookie cookie=new Cookie(key,value);
         cookie.setMaxAge(24*60*60);
